@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.utlraq.net.nz/thymeleaf/layout"
+	layout:decorator="template" >
+<head>
+<meta charset="UTF-8" />
+  <title>Liste des congés</title>
+</head>
+<body>
+	<div layout:fragment="content">
+  	  <h1>Liste des congés</h1>
+	  	   <div class="top-menu">
+	        <ul class="nav pull-right top-menu">
+	          <li><a class="logout" th:href="@{'/nouveauconge'}">Créer un nouveau congé</a></li><br/><br/>
+	        </ul>
+	      </div>
+			<div class="panel panel-success">
+			   <div class="panel-heading">
+					<h4 class="inner-tittle">Gestion des congés</h4>
+				</div>
+				<div class="panel-body">
+					<table id="table" class="table table-bordered">
+						<tr>
+							<th>Date Debut Congé</th>
+							<th>Date Fin Congé</th>
+							<th>Nature</th>
+							<th>Action</th>
+						</tr><th>Identifiant</th>
+							
+
+						<tr th:each="conge,iterStat : ${conges}">
+							<td><span th:text="${conge.datebebut}"></span></td>
+							<td><span th:text="${conge.datefin}"></span></td>
+							<td><span th:text="${conge.nature}"></span></td>
+							<td><a th:href="@{'/detailconge&' + ${conge.id}}" class="btn btn-info">Détail</a>
+								&nbsp;&nbsp;&nbsp;
+							   <a th:href="@{'/updateconge&' + ${conge.id}}" class="btn btn-success">Éditer</a>
+								&nbsp;&nbsp;&nbsp;
+								<a th:href="@{'/deleteconge&' + ${conge.id}}" class="btn btn-danger">Supprimer</a> 
+		
+							</td>
+						</tr>
+					</table>
+
+				</div>
+			</div>
+		</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.utlraq.net.nz/thymeleaf/layout"
+	layout:decorator="template" >
+<head>
+<meta charset="UTF-8" />
+  <title>Liste des offres</title>
+</head>
+<body>
+	<div layout:fragment="content">
+  	  <h1>Liste des offres publiées</h1>
+	  	   <div class="top-menu">
+	        <ul class="nav pull-right top-menu">
+	          <li><a class="logout" th:href="@{'/nouveauoffre'}">Créer un nouvelle offre</a></li><br/><br/>
+	        </ul>
+	      </div>
+			<div class="panel panel-success">
+			   <div class="panel-heading">
+					<h4 class="inner-tittle">Gestion Des Offres</h4>
+				</div>
+				<div class="panel-body">
+					<table id="table" class="table table-bordered">
+						<tr>
+							<th>Code</th>
+							<th>Intitulé</th>
+							<th>Type Offre</th>
+							<th>Action</th>
+						</tr>
+
+						<tr th:each="offres,iterStat : ${offres}">
+							<td><span th:text="${offres.id}"></span></td>
+							<td><span th:text="${offres.intitule}"></span></td>
+							<td><span th:text="${offres.typeoffre}"></span></td>
+							<td><a th:href="@{'/detailoffre&' + ${offres.id}}" class="btn btn-info">Détail</a>
+								&nbsp;&nbsp;&nbsp;
+							   <a th:href="@{'/updateoffre&' + ${offres.id}}" class="btn btn-success">Éditer</a>
+								&nbsp;&nbsp;&nbsp;
+								<a th:href="@{'/deleteoffre&' + ${offres.id}}" class="btn btn-danger">Supprimer</a> 
+							</td>
+						</tr>
+					</table>
+
+				</div>
+			</div>
+		</div>
+</body>
+</html>

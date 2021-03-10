@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.utlraq.net.nz/thymeleaf/layout"
+	layout:decorator="template" >
+<head>
+<meta charset="UTF-8" />
+  <title>Création d'un nouveau congé</title>
+</head>
+<body>
+	<div layout:fragment="content">
+  	<h1>Création d'un nouveau congé</h1>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="inner-tittle">Nouveau Congé</h4>
+		</div>
+		<div class="panel-body">
+			<form action="#" th:action="@{/enregistreconge}" th:object="${conge}"
+				method="post">
+
+				<div class="form-group col-md-6">
+					<tr>
+						<td>Date Début Congé :</td>
+						<td><input type="date" th:field="*{datebebut}"
+							class="form-control" required /></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-6">
+					<tr>
+						<td>Date Fin Congé :</td>
+						<td><input type="date" th:field="*{datefin}"
+							class="form-control" required /></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-6">
+					<tr>
+						<td>Nature ou Type congé :</td>
+						<td><input type="text" th:field="*{nature}"
+							class="form-control" required /></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-6">
+						<tr>
+							<td>Employé:</td>
+							<td>
+							<select th:field="*{employee}" class="form-control" required >
+							    <option th:each="employe : ${employes}" th:value="${employe.id}" th:text="${employe.prenom} +' '+ ${employe.nom} " />
+							</select></td>
+						</tr>
+					</div>
+				
+					<div class="form-group col-md-6">
+						<tr>
+							<td colspan="2"><button type="submit"
+									class="btn btn-primary">Créer</button></td>
+						</tr>
+					</div>
+					<div class="form-group col-md-6">
+						<tr>
+							<td colspan="2"><button type="reset"
+									class="btn btn-danger">Annuler</button></td>
+						</tr>
+					</div>
+			</form>
+		  </div>
+		</div>
+	</div>
+</body>
+</html>

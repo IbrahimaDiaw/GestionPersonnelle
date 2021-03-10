@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.utlraq.net.nz/thymeleaf/layout"
+	layout:decorator="template" >
+<head>
+<meta charset="UTF-8" />
+  <title>Modification de l'offre</title>
+</head>
+<body>
+	<div layout:fragment="content">
+  	<h1>Modification de l'offre</h1>
+  	<div class="top-menu">
+	        <ul class="nav pull-right top-menu">
+	          <li><a class="logout" th:href="@{'/nouveauoffre'}">Créer un nouvelle offre</a></li><br/><br/>
+	        </ul>
+	      </div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="inner-tittle">Mise à jour de l'offre</h4>
+		</div>
+		<div class="panel-body">
+			<form action="#" th:action="@{/enregistreoffre}" th:object="${offre}"
+				method="post">
+				<div class="form-group col-md-6">
+					<tr>
+						<td>Numéro</td>
+						<td><input type="text" th:field="*{id}" readonly="readonly"
+							class="form-control" required /></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-6">
+					<tr>
+						<td>Intitulé Offre</td>
+						<td><input type="text" th:field="*{intitule}"
+							class="form-control" required /></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-6">
+					<tr>
+						<td>Type d'offre:</td>
+						<td><select th:field="*{typeoffre}" class="form-control">
+						      	<option value="" selected="selected">Selectionner un type d'offre</option>
+						      	<option value="OFFRE DE STAGE">OFFRE DE STAGE</option>
+						      	<option value="OFFRE D'EMPLOI">OFFRE D'EMPLOI</option>
+						     </select></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-12">
+					<tr>
+						
+						<td>Description</td>
+						<td><textarea rows="12" cols="5" th:field="*{description}" 
+						      class="form-control" required/></td>
+					</tr>
+				</div>
+					<div class="form-group col-md-6">
+						<tr>
+							<td colspan="2"><button type="submit"
+									class="btn btn-primary">Update</button></td>
+						</tr>
+					</div>
+					<div class="form-group col-md-6">
+						<tr>
+							<td colspan="2"><button type="reset"
+									class="btn btn-danger">Annuler</button></td>
+						</tr>
+					</div>
+			</form>
+		  </div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.utlraq.net.nz/thymeleaf/layout"
+	layout:decorator="template" >
+<head>
+<meta charset="UTF-8" />
+  <title>Detail du candidat</title>
+</head>
+<body>
+	<div layout:fragment="content">
+	  	<h1>Detail du candidat</h1>
+		<div class="panel panel-success">
+			<div class="panel-heading">
+			
+				<h4 class="inner-tittle">Detail de la Candidature</h4>
+			</div>
+			<div class="panel-body" th:object="${postule}">
+			
+			<div class="form-row" >
+			    <div class="form-group col-md-6">
+			      <label for="nom">Nom du Candidat</label>
+			      <span th:text="${postule.prenom}"></span>
+			    </div>
+			    <div class="form-group col-md-6">
+			      <label for="prenom">Prenom du candidat</label>
+			      <span th:text="${postule.prenom}"></span>
+			    </div>
+		  	</div>
+		  	<div class="form-row" >
+			    <div class="form-group col-md-6">
+			      <label for="nom">Date Naissance</label>
+			      <span th:text="${postule.datenaiss}"></span>
+			    </div>
+			    <div class="form-group col-md-6">
+			      <label for="prenom">Lieu Naissance</label>
+			      <span th:text="${postule.lieunaiss}"></span>
+			    </div>
+		  	</div>
+		  	<div class="form-row" >
+			    <div class="form-group col-md-6">
+			      <label for="nom">Sexe</label>
+			      <span th:text="${postule.sexe}"></span>
+			    </div>
+			    <div class="form-group col-md-6">
+			      <label for="prenom">Telephone</label>
+			      <span th:text="${postule.telephone}"></span>
+			    </div>
+		  	</div>
+			<div class="form-row" >
+			    <div class="form-group col-md-6">
+			      <label for="nom">Adresse</label>
+			      <span th:text="${postule.prenom}"></span>
+			    </div>
+			    <div class="form-group col-md-6">
+			      <label for="prenom">Email</label>
+			      <span th:text="${postule.email}"></span>
+			    </div>
+		  	</div>
+		  	<div class="form-row" >
+			    <div class="form-group col-md-6">
+			      <label for="nom">Specialite</label>
+			      <span th:text="${postule.specialite}"></span>
+			    </div>
+			    <div class="form-group col-md-6">
+			      <label for="prenom">Niveau</label>
+			      <span th:text="${postule.niveau}"></span>
+			    </div>
+		  	</div>
+			 </div>
+			</div>
+</div>
+</body>
+</html>

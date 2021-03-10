@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.utlraq.net.nz/thymeleaf/layout"
+	layout:decorator="template" >
+<head>
+<meta charset="UTF-8" />
+  <title>Liste des employés</title>
+</head>
+<body>
+	<div layout:fragment="content">
+  	  <h1>Liste des employés</h1>
+	  	   <div class="top-menu">
+	        <ul class="nav pull-right top-menu">
+	          <li><a class="logout" th:href="@{'/nouveauemploye'}">Créer un nouvel employé</a></li><br/><br/>
+	        </ul>
+	      </div>
+			<div class="panel panel-success">
+			   <div class="panel-heading">
+					<h4 class="inner-tittle">Détail Employé</h4>
+				</div>
+				<div class="panel-body">
+					<table id="table" class="table table-bordered" th:object="${emp}">
+						
+						<tr >
+							<td>Identifiant</td>
+							<td><span th:text="${emp.id}"></span></td>
+						</tr>
+						<tr >
+							<td>Prénom</td>
+							<td><span th:text="${emp.prenom}"></span></td>
+						</tr>
+						<tr >
+							<td>Nom</td>
+							<td><span th:text="${emp.nom}"></span></td>
+						</tr>
+						<tr >
+							<td>Adresse</td>
+							<td><span th:text="${emp.adresse}"></span></td>
+						</tr>
+						<tr >
+							<td>Email</td>
+							<td><span th:text="${emp.email}"></span></td>
+						</tr>
+						<tr >
+							<td>Fonction</td>
+							<td><span th:text="${emp.fonction}"></span></td>
+						</tr>
+						<tr >
+							<td>Email</td>
+							<td><span th:text="${emp.tel}"></span></td>
+						</tr>
+						<tr >
+							<td>Salaire</td>
+							<td><span th:text="${emp.salaire}"></span></td>
+						</tr>	
+						
+					</table>
+
+				</div>
+			</div>
+		</div>
+</body>
+</html>

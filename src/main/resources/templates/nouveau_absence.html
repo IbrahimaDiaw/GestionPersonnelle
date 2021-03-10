@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.utlraq.net.nz/thymeleaf/layout"
+	layout:decorator="template" >
+<head>
+<meta charset="UTF-8" />
+  <title>Création d'une nouvelle Absence</title>
+</head>
+<body>
+	<div layout:fragment="content">
+  	<h1>Création d'une nouvelle Absence</h1>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="inner-tittle">Nouvelle Absence</h4>
+		</div>
+		<div class="panel-body">
+			<form action="#" th:action="@{/enregistreabsence}" th:object="${absence}"
+				method="post">
+
+				<div class="form-group col-md-6">
+					<tr>
+						<td>Date D'Absence :</td>
+						<td><input type="date" th:field="*{dateabsence}"
+							class="form-control" required /></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-6">
+					<tr>
+						<td>Durée d'absence :</td>
+						<td><input type="text" th:field="*{dureabsence}"
+							class="form-control" required /></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-6">
+					<tr>
+						<td>Motif de l'absence :</td>
+						<td><input type="text" th:field="*{motifabsence}"
+							class="form-control" required /></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-6">
+						<tr>
+							<td>Employé:</td>
+							<td>
+							<select th:field="*{employee}" class="form-control" required >
+							    <option th:each="employe : ${employes}" th:value="${employe.id}" th:text="${employe.prenom} +' '+ ${employe.nom} " />
+							</select></td>
+						</tr>
+					</div>
+				
+					<div class="form-group col-md-6">
+						<tr>
+							<td colspan="2"><button type="submit"
+									class="btn btn-primary">Créer</button></td>
+						</tr>
+					</div>
+					<div class="form-group col-md-6">
+						<tr>
+							<td colspan="2"><button type="reset"
+									class="btn btn-danger">Annuler</button></td>
+						</tr>
+					</div>
+			</form>
+		  </div>
+		</div>
+	</div>
+</body>
+</html>

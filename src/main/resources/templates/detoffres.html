@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.utlraq.net.nz/thymeleaf/layout"
+	layout:decorator="template2" >
+<head>
+<meta charset="UTF-8" />
+  <title>Inscription du Candidat</title>
+</head>
+<body>
+	<div layout:fragment="content2">
+<div class="hero-area1 text-center">
+  Inscription du Candidat
+</div>
+	<div class="container">
+		<div class="row mt">
+				<div class="col-lg-2" id="descr">
+					
+				</div>
+				<div class="col-lg-10 border" id="nosoffres">
+					<h4>Offre</h4>
+					<div class="panel-body">
+					<table id="table" class="table table-striped table-hover" th:object="${offres}">
+						
+						<tr>
+							<td>Code</td>
+							<td><span th:text="${offres.id}"></span></td>
+						</tr>
+						<tr >
+							<td>Intitulé</td>
+							<td><span th:text="${offres.intitule}"></span></td>
+						</tr>
+						<tr >
+							<td>Type Offre</td>
+							<td><span th:text="${offres.typeoffre}"></span></td>
+						</tr>
+						<tr >
+							<td>Description de L'Offre</td>
+							<td style="text-align:justify;"><span th:text="${offres.description}" ></span></td>
+						</tr>
+					</table>
+
+				</div>
+				<div id="voirtous">
+					<a th:href="@{/voiroffres}" class="btn btn-lg btn-link">Voir
+						tous les offres</a>
+				</div>
+				</div>
+				
+			</div>
+	</div>		
+	</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.utlraq.net.nz/thymeleaf/layout"
+	layout:decorator="template" >
+<head>
+<meta charset="UTF-8" />
+  <title>Les Candidats</title>
+</head>
+<body>
+	<div layout:fragment="content">
+	  	<h1>Les Candidats</h1>
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<h4 class="inner-tittle">Liste des Postulants</h4>
+			</div>
+			<div class="panel-body">
+				 <table class="table table-bordered">
+				<tr>
+	  				<th>Id</th>
+	    			<th>Prénom</th>
+	 		   		<th>Nom</th> 
+	    			<th>Adresse</th>
+	    			<th>Telephone</th>
+	    			<th>Email</th>
+	    			<th colspan="2">Action</th>
+	  		  	</tr>
+	    
+				<tr th:each="postules : ${postules}" >
+					<td><span th:text="${postules.id}"></span></td>
+					<td><span th:text="${postules.prenom}"></span></td>
+					<td><span th:text="${postules.nom}"></span></td>
+					<td><span th:text="${postules.adresse}"></span></td>
+					<td><span th:text="${postules.telephone}"></span></td>
+					<td><span th:text="${postules.email}"></span></td>	
+					<td>
+					<!--<a th:href="@{'/postule' + ${postules.id}}">Modifier</a>-->
+					<a th:href="@{'/voirpostule' + ${postules.id}}" class="btn btn-info">Voir</a>
+					</td>	
+					<td><a th:href="@{'/deletepost' + ${postules.id}}" class="btn btn-danger">Suprimer</a></td>	
+				</tr>
+			  </table>
+			  </div>
+			</div>
+		</div>
+</body>
+</html>

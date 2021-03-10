@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.utlraq.net.nz/thymeleaf/layout"
+	layout:decorator="template" >
+<head>
+<meta charset="UTF-8" />
+  <title>Mettre à jour un employé</title>
+</head>
+<body>
+	<div layout:fragment="content">
+  	<h1>Mettre à jour un employé</h1>
+	 <div class="top-menu">
+       <ul class="nav pull-right top-menu">
+         <li><a class="logout" th:href="@{'/nouveauemploye'}">Créer un nouvel employé</a></li><br/><br/>
+       </ul>
+     </div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="inner-tittle">Modification Employé</h4>
+		</div>
+		<div class="panel-body">
+			<form action="#" th:action="@{/enregistreemploye}" th:object="${employe}"
+				method="post">
+
+				<div class="form-group col-md-6">
+					<tr>
+						<td>Nom :</td>
+						<td><input type="text" th:field="*{id}"
+							class="form-control" required readonly="readonly"/></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-6">
+					<tr>
+						<td>Nom :</td>
+						<td><input type="text" th:field="*{nom}"
+							class="form-control" required /></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-6">
+					<tr>
+						<td>Prenom:</td>
+						<td><input type="text" th:field="*{prenom}"
+							class="form-control" required /></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-6">
+					<tr>
+						<td>Adresse</td>
+						<td><textarea rows="12" cols="5" th:field="*{adresse}" class="form-control" required/></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-6">
+					<tr>
+						<td>Email:</td>
+						<td><input type="text" th:field="*{email}"
+							class="form-control" required /></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-6">
+					<tr>
+						<td>Téléphone:</td>
+						<td><input type="text" th:field="*{tel}"
+							class="form-control" required /></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-6">
+					<tr>
+						<td>Fonction:</td>
+						<td><input type="text" th:field="*{fonction}"
+							class="form-control" required /></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-6">
+					<tr>
+						<td>Salaire:</td>
+						<td><input type="text" th:field="*{salaire}"
+							class="form-control" required /></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-6">
+					<tr>
+						<td colspan="2"><button type="submit"
+								class="btn btn-primary">Update</button></td>
+					</tr>
+				</div>
+				<div class="form-group col-md-6">
+					<tr>
+						<td colspan="2"><button type="reset"
+								class="btn btn-danger">Annuler</button></td>
+					</tr>
+				</div>
+			</form>
+		  </div>
+		</div>
+	</div>
+</body>
+</html>

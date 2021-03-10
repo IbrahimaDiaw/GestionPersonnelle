@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.utlraq.net.nz/thymeleaf/layout"
+	layout:decorator="template" >
+<head>
+<meta charset="UTF-8" />
+  <title>Inscription du candidat</title>
+</head>
+<body>
+	<div layout:fragment="content">
+  	<h1>Inscription du candidat</h1>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h4 class="inner-tittle">Modifier Candidature</h4>
+		</div>
+		<div class="panel-body">
+			<form action="#" class="form-group"  th:action="@{/enregistrepostule}" th:object="${postule}" method="post">
+  <div class="form-row" >
+    <div class="form-group col-md-6">
+      <label for="nom">Nom du Candidat</label>
+      <input type="text" class="form-control" id="nom" placeholder="Nom" th:field="*{nom}" />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="prenom">Prenom du candidat</label>
+      <input type="text" class="form-control" id="prenom" placeholder="Prenom" th:field="*{prenom}" />
+    </div>
+  </div>
+   <div class="form-row" >
+    <div class="form-group col-md-12">
+      <label for="adresse">adresse</label>
+      <input type="text" class="form-control" id="adresse" placeholder="Adresse" th:field="*{adresse}" />
+    </div>
+  </div>
+  <div class="form-row" >
+    <div class="form-group col-md-6">
+      <label for="telephone">Telephone</label>
+      <input type="text" class="form-control" id="telephone" placeholder="Telephone" th:field="*{telephone}"/>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" placeholder="Email" th:field="*{email}" />
+    </div>
+  </div>
+  <button class="btn btn-success mt" type="submit" />Enregistrer</button>
+
+	</form>
+		  </div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.utlraq.net.nz/thymeleaf/layout"
+	layout:decorator="template" >
+<head>
+<meta charset="UTF-8" />
+  <title>Tableau de bord</title>
+</head>
+<body>
+	<div layout:fragment="content">
+       <div class="row mt">
+          <div class="col-lg-12 main-chart">
+                      <!--CUSTOM CHART START -->
+            <div class="border-head">
+              <h3>Bonjour M</h3>
+            </div>
+            <h5 class="centered"><span th:utext="${userName}"></span></h5>
+           
+           
+           </div>
+            </div>
+            <!--custom chart end-->
+          
+          
+          </div>
+        </div></div>
+</body>
+</html>

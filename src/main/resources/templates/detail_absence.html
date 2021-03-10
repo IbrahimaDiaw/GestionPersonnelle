@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.utlraq.net.nz/thymeleaf/layout"
+	layout:decorator="template" >
+<head>
+<meta charset="UTF-8" />
+  <title>Gestion des absences</title>
+</head>
+<body>
+	<div layout:fragment="content">
+  	  <h1>Gestion des absences</h1>
+	  	   <div class="top-menu">
+		       <ul class="nav pull-right top-menu">
+		         <li><a class="logout" th:href="@{'/nouveauabsence'}">Créer une nouvelle absence</a></li><br/><br/>
+		       </ul>
+		     </div>
+			<div class="panel panel-success">
+			   <div class="panel-heading">
+					<h4 class="inner-tittle">Détail Absence</h4>
+				</div>
+				<div class="panel-body">
+					<table id="table" class="table table-bordered" th:object="${absence}">
+						
+						<tr >
+							<td>Code</td>
+							<td><span th:text="${absence.id}"></span></td>
+						</tr>
+						<tr >
+							<td>Date Absence</td>
+							<td><span th:text="${absence.dateabsence}"></span></td>
+						</tr>
+						<tr >
+							<td>Durée Absence</td>
+							<td><span th:text="${absence.dureabsence}"></span></td>
+						</tr>
+						<tr >
+							<td>Motif de l'absence</td>
+							<td><span th:text="${absence.motifabsence}"></span></td>
+						</tr>
+						<tr >
+							<td>Employé en congé</td>
+							<td><span th:text="${absence.employee}"></span></td>
+						</tr>
+					</table>
+
+				</div>
+			</div>
+		</div>
+</body>
+</html>

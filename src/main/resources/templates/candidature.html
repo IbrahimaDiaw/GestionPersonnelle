@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.utlraq.net.nz/thymeleaf/layout"
+	layout:decorator="template2" >
+<head>
+<meta charset="UTF-8" />
+  <title>Inscription du Candidat</title>
+</head>
+<body>
+	<div layout:fragment="content2">
+<div class="hero-area1 text-center">
+  Inscription du Candidat
+</div>
+			<div class="row mt container">
+				<div class="col-lg-3" id="descr">
+					<h4></h4>
+					<div class="panel-body">
+					<!-- 
+					<table id="table" class="table table-bordered" th:each="offre : ${offres}">
+						
+						<tr >
+							<td>Code</td>
+							<td><span th:text="${offre.id}"></span></td>
+						</tr>
+						<tr >
+							<td>Intitulé</td>
+							<td><span th:text="${offre.intitule}"></span></td>
+						</tr>
+						<tr >
+							<td>Type Offre</td>
+							<td><span th:text="${offre.typeoffre}"></span></td>
+						</tr>
+					</table>
+					 -->
+					
+
+				</div>
+				</div>
+				<div class="col-lg-9 border" id="nosoffres">
+					<div class="col-lg-12" style="text-align: center;">
+						<h4>Veuillez renseigner ce formulaire pour postuler </h4>
+					</div>
+					<div class="col-md-11 mb" >
+						<div class="panel-body">
+			<form action="#" class="form-group"  th:action="@{/enregistrecandidat}" th:object="${postule}" method="post">
+  <div class="form-row" >
+    <div class="form-group col-md-6">
+      <label for="nom">Nom du Candidat</label>
+      <input type="text" class="form-control" id="nom" placeholder="Nom" th:field="*{nom}">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="prenom">Prenom du candidat</label>
+      <input type="text" class="form-control" id="prenom" placeholder="Prenom" th:field="*{prenom}">
+    </div>
+  </div>
+   <div class="form-row" >
+    <div class="form-group col-md-12">
+      <label for="adresse">Adresse</label>
+      <input type="text" class="form-control" id="adresse" placeholder="Adresse" th:field="*{adresse}">
+    </div>
+  </div>
+  <div class="form-row" >
+    <div class="form-group col-md-3">
+      <label for="datenaiss">Date de Naissance</label>
+      <input type="date" class="form-control" id="datenaiss"  th:field="*{datenaiss}">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="lieu">Lieu de naissance</label>
+      <input type="text" class="form-control" id="lieu" placeholder="Lieu de naissance" th:field="*{lieunaiss}">
+    </div>
+    <div class="form-group col-md-3">
+    Sexe
+      <div class="form-check form-check-inline">
+		  <input class="form-check-input" type="radio" th:field="*{sexe}" name="inlineRadioOptions" id="inlineRadio1" value="M">
+		  <label class="form-check-label" for="inlineRadio1">M</label>
+		</div>
+		<div class="form-check form-check-inline">
+		  <input class="form-check-input" type="radio" th:field="*{sexe}" name="inlineRadioOptions" id="inlineRadio2" value="F">
+		  <label class="form-check-label" for="inlineRadio2">F</label>
+		</div>
+    </div>
+  </div>
+  
+  <div class="form-row" >
+    <div class="form-group col-md-6">
+      <label for="telephone">Telephone</label>
+      <input type="text" class="form-control" id="telephone" placeholder="Telephone" th:field="*{telephone}">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" placeholder="Email" th:field="*{email}">
+    </div>
+  </div>
+  
+  <div class="form-row" >
+    <div class="form-group col-md-6">
+      <label for="spec">Specialite</label>
+      <select th:field="*{specialite}" id="spec" class="form-control">
+      	<option th:text="Developpeur" value="informatique"></option>
+      	<option value="Technicien reseau">Technicien reseau</option>
+      	<option th:text="Maintenancier" value="Maintenancier"></option>
+      	<option th:text="Comptable" value="Comptable"></option>
+      	<option th:text="Redactrice" value="Redactrice"></option>
+      	<option value="Agent de securite">Agent de securite</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="niveau">Niveau</label>
+      <select th:field="*{niveau}" id="spec" class="form-control">
+      	<option th:text="Baccalaureat" value="Bac"></option>
+      	<option value="Bac+1">Bac + 1</option>
+      	<option value="Bac+2">Bac + 2</option>
+      	<option value="Bac+3">Bac + 3</option>
+      	<option value="Bac+4">Bac + 4</option>
+      	<option value="Bac+5">Bac + 5</option>
+      	<option value="Master pro">Master Pro</option>
+      	<option value="Doctorat">Doctorat</option>
+      </select>
+    </div>
+  </div>
+  <button class="btn btn-success mt" type="submit">Enregistrer</button>
+
+	</form>
+		  </div>
+					</div>
+					<!-- /Message Panel-->
+				</div>
+			</div></div>
+</body>
+</html>
